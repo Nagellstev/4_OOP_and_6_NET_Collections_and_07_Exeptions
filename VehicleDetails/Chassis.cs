@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarPark
+namespace CarPark.VehicleDetails
 {
     class Chassis
     {
@@ -14,9 +14,9 @@ namespace CarPark
         public void ChassisOutput()
         {
             Console.WriteLine("Chassis Characteristics: ");
-            Console.WriteLine("Wheels Number: " + WheelsNumber);
-            Console.WriteLine("Serial Number: " + SerialNumber);
-            Console.WriteLine("Load: " + Load + "kg\n");
+            Console.WriteLine($"Wheels Number: {WheelsNumber}");
+            Console.WriteLine($"Serial Number: {SerialNumber}");
+            Console.WriteLine($"Load: {Load} kg\n");
         }
     }
 }

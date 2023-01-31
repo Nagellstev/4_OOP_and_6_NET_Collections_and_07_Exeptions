@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarPark
+namespace CarPark.VehicleDetails
 {
     class Transmission
     {
@@ -14,9 +14,9 @@ namespace CarPark
         public void TransmissionOutput()
         {
             Console.WriteLine("Transmission Characteristics: ");
-            Console.WriteLine("Type: " + Type);
-            Console.WriteLine("Manufacturer: " + Manufacturer);
-            Console.WriteLine("GearsNumber: " + GearsNumber + "\n");
+            Console.WriteLine($"Type: {Type}");
+            Console.WriteLine($"Manufacturer: {Manufacturer}");
+            Console.WriteLine($"GearsNumber: {GearsNumber}\n");
         }
     }
 }

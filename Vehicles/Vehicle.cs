@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CarPark.VehicleDetails;
 
-namespace CarPark
+namespace CarPark.Vehicles
 {
-    class Car
+    class Vehicle
     {
         public string Model
         { get; set; }
@@ -28,20 +29,9 @@ namespace CarPark
                 return chassis.Load;
             }
         }
+
         public Engine engine = new Engine();
         public Transmission transmission = new Transmission();
         public Chassis chassis = new Chassis();
-        public void CarPropertiesOutput()
-        {
-            Console.WriteLine(Model + " Characteristics: ");
-            Console.WriteLine("Color: " + Color);
-            Console.WriteLine("Max Speed: " + maxSpeed + "km/h");
-            Console.WriteLine("Power: " + Power + "hp");
-            Console.WriteLine("Max Load: " + MaxLoad + "kg\n");
-            engine.EngineOutput();
-            chassis.ChassisOutput();
-            transmission.TransmissionOutput();
-            Console.WriteLine("\n");
-        }
     }
 }

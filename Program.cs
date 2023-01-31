@@ -2,96 +2,102 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
+using CarPark.Vehicles;
 
 namespace CarPark
 {
     class Program
     {
-        static void Main()
+        public static void Main()
         {
+            PassengerCar passengerCar= new PassengerCar();
+            passengerCar.Model = "Passenger Car";
+            passengerCar.maxSpeed = 200;
+            passengerCar.Color = "Blue";
+            passengerCar.BodyType = "Sedan";
 
-            Car PassengerCar = new Car();
-            PassengerCar.Model = "Passenger Car";
-            PassengerCar.maxSpeed = 200;
-            PassengerCar.Color = "Blue";
+            passengerCar.engine.EngineType = "Gas";
+            passengerCar.engine.SerialNumber = 123;
+            passengerCar.engine.Volume = 2.4m;
+            passengerCar.engine.Power = 180;
 
-            PassengerCar.engine.EngineType = "Gas";
-            PassengerCar.engine.SerialNumber = 123;
-            PassengerCar.engine.Volume = 2.4m;
-            PassengerCar.engine.Power = 180;
+            passengerCar.chassis.WheelsNumber = 4;
+            passengerCar.chassis.Load = 2000;
+            passengerCar.chassis.SerialNumber = 234;
 
-            PassengerCar.chassis.WheelsNumber = 4;
-            PassengerCar.chassis.Load = 2000;
-            PassengerCar.chassis.SerialNumber = 234;
+            passengerCar.transmission.Manufacturer = "ZF";
+            passengerCar.transmission.GearsNumber = 5;
+            passengerCar.transmission.Type = "automatic";
 
-            PassengerCar.transmission.Manufacturer = "ZF";
-            PassengerCar.transmission.GearsNumber = 5;
-            PassengerCar.transmission.Type = "automatic";
+            Truck truck= new Truck();
+            truck.Model = "Truck";
+            truck.maxSpeed = 120;
+            truck.Color = "White";
+            truck.TrackBodyVolume = 6;
 
-            Car Truck = new Car();
-            Truck.Model = "Truck";
-            Truck.maxSpeed = 120;
-            Truck.Color = "White";
+            truck.engine.EngineType = "Diesel";
+            truck.engine.SerialNumber = 345;
+            truck.engine.Volume = 6.4m;
+            truck.engine.Power = 220;
 
-            Truck.engine.EngineType = "Diesel";
-            Truck.engine.SerialNumber = 345;
-            Truck.engine.Volume = 6.4m;
-            Truck.engine.Power = 220;
+            truck.chassis.WheelsNumber = 6;
+            truck.chassis.Load = 12000;
+            truck.chassis.SerialNumber = 456;
 
-            Truck.chassis.WheelsNumber = 6;
-            Truck.chassis.Load = 12000;
-            Truck.chassis.SerialNumber = 456;
+            truck.transmission.Manufacturer = "Bonfiglioli";
+            truck.transmission.GearsNumber = 12;
+            truck.transmission.Type = "manual";
 
-            Truck.transmission.Manufacturer = "Bonfiglioli";
-            Truck.transmission.GearsNumber = 12;
-            Truck.transmission.Type = "manual";
+            Bus bus = new Bus();
+            bus.Model = "Bus";
+            bus.maxSpeed = 140;
+            bus.Color = "Grey";
+            bus.PassengerCaparcity = 50;
 
-            Car Bus = new Car();
-            Bus.Model = "Bus";
-            Bus.maxSpeed = 140;
-            Bus.Color = "Grey";
+            bus.engine.EngineType = "Diesel";
+            bus.engine.SerialNumber = 567;
+            bus.engine.Volume = 5.4m;
+            bus.engine.Power = 210;
 
-            Bus.engine.EngineType = "Diesel";
-            Bus.engine.SerialNumber = 567;
-            Bus.engine.Volume = 5.4m;
-            Bus.engine.Power = 210;
+            bus.chassis.WheelsNumber = 4;
+            bus.chassis.Load = 8000;
+            bus.chassis.SerialNumber = 678;
 
-            Bus.chassis.WheelsNumber = 4;
-            Bus.chassis.Load = 8000;
-            Bus.chassis.SerialNumber = 678;
+            bus.transmission.Manufacturer = "Linda";
+            bus.transmission.GearsNumber = 10;
+            bus.transmission.Type = "manual";
 
-            Bus.transmission.Manufacturer = "Linda";
-            Bus.transmission.GearsNumber = 10;
-            Bus.transmission.Type = "manual";
+            Scooter scooter = new Scooter();
+            scooter.Model = "Scooter";
+            scooter.maxSpeed = 80;
+            scooter.Color = "Red";
+            scooter.BrakesType = "Disk";
 
-            Car Scooter = new Car();
-            Scooter.Model = "Scooter";
-            Scooter.maxSpeed = 80;
-            Scooter.Color = "Red";
+            scooter.engine.EngineType = "Gas";
+            scooter.engine.SerialNumber = 789;
+            scooter.engine.Volume = 0.15m;
+            scooter.engine.Power = 10;
 
-            Scooter.engine.EngineType = "Gas";
-            Scooter.engine.SerialNumber = 789;
-            Scooter.engine.Volume = 0.15m;
-            Scooter.engine.Power = 10;
+            scooter.chassis.WheelsNumber = 2;
+            scooter.chassis.Load = 200;
+            scooter.chassis.SerialNumber = 890;
 
-            Scooter.chassis.WheelsNumber = 2;
-            Scooter.chassis.Load = 200;
-            Scooter.chassis.SerialNumber = 890;
-
-            Scooter.transmission.Manufacturer = "CF";
-            Scooter.transmission.GearsNumber = 1;
-            Scooter.transmission.Type = "Variator";
+            scooter.transmission.Manufacturer = "CF";
+            scooter.transmission.GearsNumber = 1;
+            scooter.transmission.Type = "Variator";
 
             Console.WriteLine("Car Park\n");
             Console.WriteLine("\n");
-            PassengerCar.CarPropertiesOutput();
-            Truck.CarPropertiesOutput();
-            Bus.CarPropertiesOutput();
-            Scooter.CarPropertiesOutput();
+
+            passengerCar.PassengerCarPropertiesOutput();
+            truck.TruckPropertiesOutput();
+            bus.BusPropertiesOutput();
+            scooter.ScooterPropertiesOutput();
         }
     }
 }

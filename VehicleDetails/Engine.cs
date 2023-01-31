@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarPark
+namespace CarPark.VehicleDetails
 {
     class Engine
     {
@@ -19,11 +19,11 @@ namespace CarPark
 
         public void EngineOutput()
         {
-            Console.WriteLine("Engine Characteristics: ");
-            Console.WriteLine("Type: " + EngineType);
-            Console.WriteLine("Serial Number: " + SerialNumber);
-            Console.WriteLine("Power: " + Power + "hp");
-            Console.WriteLine("Volume: " + Volume + "l\n");
+            Console.WriteLine($"Engine Characteristics: ");
+            Console.WriteLine($"Type: {EngineType}");
+            Console.WriteLine($"Serial Number: {SerialNumber}");
+            Console.WriteLine($"Power: {Power} hp");
+            Console.WriteLine($"Volume: {Volume} l\n");
         }
     }
 }
