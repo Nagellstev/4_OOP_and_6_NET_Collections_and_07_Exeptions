@@ -7,7 +7,7 @@ using CarPark.VehicleDetails;
 
 namespace CarPark.Vehicles
 {
-    class Vehicle
+    internal class Vehicle
     {
         public string Model
         { get; set; }
@@ -33,5 +33,10 @@ namespace CarPark.Vehicles
         public Engine engine = new Engine();
         public Transmission transmission = new Transmission();
         public Chassis chassis = new Chassis();
+
+        public virtual void PropertiesOutput()
+        {
+
+        }
     }
 }

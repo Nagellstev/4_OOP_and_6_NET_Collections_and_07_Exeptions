@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace CarPark.VehicleDetails
 {
-    class Transmission
+    internal class Transmission
     {
         public string Type;
         public string Manufacturer;
         public int GearsNumber;
-        public void TransmissionOutput()
+
+        public void Output()
         {
             Console.WriteLine("Transmission Characteristics: ");
             Console.WriteLine($"Type: {Type}");

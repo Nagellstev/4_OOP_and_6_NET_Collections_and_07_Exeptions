@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarPark.VehicleDetails
 {
-    class Engine
+    internal class Engine
     {
         public string EngineType
         { get; set; }
@@ -17,7 +17,7 @@ namespace CarPark.VehicleDetails
         public decimal Volume
         { get; set; }
 
-        public void EngineOutput()
+        public void Output()
         {
             Console.WriteLine($"Engine Characteristics: ");
             Console.WriteLine($"Type: {EngineType}");

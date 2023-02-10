@@ -11,11 +11,11 @@ using CarPark.Vehicles;
 
 namespace CarPark
 {
-    class Program
+    public class Program
     {
         public static void Main()
         {
-            PassengerCar passengerCar= new PassengerCar();
+            PassengerCar passengerCar = new PassengerCar();
             passengerCar.Model = "Passenger Car";
             passengerCar.maxSpeed = 200;
             passengerCar.Color = "Blue";
@@ -34,7 +34,7 @@ namespace CarPark
             passengerCar.transmission.GearsNumber = 5;
             passengerCar.transmission.Type = "automatic";
 
-            Truck truck= new Truck();
+            Truck truck = new Truck();
             truck.Model = "Truck";
             truck.maxSpeed = 120;
             truck.Color = "White";
@@ -94,10 +94,75 @@ namespace CarPark
             Console.WriteLine("Car Park\n");
             Console.WriteLine("\n");
 
-            passengerCar.PassengerCarPropertiesOutput();
-            truck.TruckPropertiesOutput();
-            bus.BusPropertiesOutput();
-            scooter.ScooterPropertiesOutput();
+            if (IsValid(passengerCar))
+            {
+                passengerCar.PropertiesOutput();
+            }
+            else
+            {
+                Console.WriteLine("Something went wrong. Car is not valid");
+                Console.WriteLine("\n");
+            }
+
+            if (IsValid(truck))
+            {
+                truck.PropertiesOutput();
+            }
+            else
+            {
+                Console.WriteLine("Something went wrong. Car is not valid");
+                Console.WriteLine("\n");
+            }
+
+            if (IsValid(bus))
+            {
+                bus.PropertiesOutput();
+            }
+            else
+            {
+                Console.WriteLine("Something went wrong. Car is not valid");
+                Console.WriteLine("\n");
+            }
+
+            if (IsValid(scooter))
+            {
+                scooter.PropertiesOutput();
+            }
+            else
+            {
+                Console.WriteLine("Something went wrong. Car is not valid");
+                Console.WriteLine("\n");
+            }
+        }
+
+        private static bool IsValid(Vehicle car)
+        {
+            if (
+                !string.IsNullOrEmpty(car.Model) &&
+                !string.IsNullOrEmpty(car.Color) &&
+                car.maxSpeed > 0 &&
+                car.Power > 0 &&
+
+                !string.IsNullOrEmpty(car.engine.EngineType) &&
+                car.engine.SerialNumber > 0 &&
+                car.engine.Volume > 0 &&
+                car.engine.Power > 0 &&
+
+                car.chassis.WheelsNumber > 0 &&
+                car.chassis.Load > 0 &&
+                car.chassis.SerialNumber > 0 &&
+
+                !string.IsNullOrEmpty(car.transmission.Manufacturer) &&
+                car.transmission.GearsNumber > 0 &&
+                !string.IsNullOrEmpty(car.transmission.Type)
+                )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace CarPark.VehicleDetails
 {
-    class Chassis
+    internal class Chassis
     {
         public int WheelsNumber;
         public int SerialNumber;
         public decimal Load;
-        public void ChassisOutput()
+
+        public void Output()
         {
             Console.WriteLine("Chassis Characteristics: ");
             Console.WriteLine($"Wheels Number: {WheelsNumber}");

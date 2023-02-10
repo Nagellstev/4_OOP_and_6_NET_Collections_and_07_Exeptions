@@ -11,7 +11,7 @@ namespace CarPark.Vehicles
         public int PassengerCaparcity
         { get; set; }
 
-        public void BusPropertiesOutput()
+        public override void PropertiesOutput()
         {
             Console.WriteLine($"{Model} Characteristics: ");
             Console.WriteLine($"Passenger Caparcity: {PassengerCaparcity}");
@@ -19,9 +19,11 @@ namespace CarPark.Vehicles
             Console.WriteLine($"Max Speed: {maxSpeed} km/h");
             Console.WriteLine($"Power: {Power} hp");
             Console.WriteLine($"Max Load: {MaxLoad} kg\n");
-            engine.EngineOutput();
-            chassis.ChassisOutput();
-            transmission.TransmissionOutput();
+
+            engine.Output();
+            chassis.Output();
+            transmission.Output();
+
             Console.WriteLine("\n");
         }
     }
