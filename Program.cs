@@ -17,9 +17,10 @@ namespace CarPark
         {
             PassengerCar passengerCar = new PassengerCar();
             passengerCar.Model = "Passenger Car";
-            passengerCar.maxSpeed = 200;
+            passengerCar.MaxSpeed = 200;
             passengerCar.Color = "Blue";
             passengerCar.BodyType = "Sedan";
+            passengerCar.Number = 10;
 
             passengerCar.engine.EngineType = "Gas";
             passengerCar.engine.SerialNumber = 123;
@@ -36,9 +37,10 @@ namespace CarPark
 
             Truck truck = new Truck();
             truck.Model = "Truck";
-            truck.maxSpeed = 120;
+            truck.MaxSpeed = 120;
             truck.Color = "White";
-            truck.TrackBodyVolume = 6;
+            truck.TruckBodyVolume = 6;
+            truck.Number = 11;
 
             truck.engine.EngineType = "Diesel";
             truck.engine.SerialNumber = 345;
@@ -55,9 +57,10 @@ namespace CarPark
 
             Bus bus = new Bus();
             bus.Model = "Bus";
-            bus.maxSpeed = 140;
+            bus.MaxSpeed = 140;
             bus.Color = "Grey";
             bus.PassengerCaparcity = 50;
+            bus.Number = 12;
 
             bus.engine.EngineType = "Diesel";
             bus.engine.SerialNumber = 567;
@@ -74,9 +77,10 @@ namespace CarPark
 
             Scooter scooter = new Scooter();
             scooter.Model = "Scooter";
-            scooter.maxSpeed = 80;
+            scooter.MaxSpeed = 80;
             scooter.Color = "Red";
             scooter.BrakesType = "Disk";
+            scooter.Number = 13;
 
             scooter.engine.EngineType = "Gas";
             scooter.engine.SerialNumber = 789;
@@ -92,77 +96,11 @@ namespace CarPark
             scooter.transmission.Type = "Variator";
 
             Console.WriteLine("Car Park\n");
-            Console.WriteLine("\n");
 
-            if (IsValid(passengerCar))
-            {
-                passengerCar.PropertiesOutput();
-            }
-            else
-            {
-                Console.WriteLine("Something went wrong. Car is not valid");
-                Console.WriteLine("\n");
-            }
-
-            if (IsValid(truck))
-            {
-                truck.PropertiesOutput();
-            }
-            else
-            {
-                Console.WriteLine("Something went wrong. Car is not valid");
-                Console.WriteLine("\n");
-            }
-
-            if (IsValid(bus))
-            {
-                bus.PropertiesOutput();
-            }
-            else
-            {
-                Console.WriteLine("Something went wrong. Car is not valid");
-                Console.WriteLine("\n");
-            }
-
-            if (IsValid(scooter))
-            {
-                scooter.PropertiesOutput();
-            }
-            else
-            {
-                Console.WriteLine("Something went wrong. Car is not valid");
-                Console.WriteLine("\n");
-            }
-        }
-
-        private static bool IsValid(Vehicle car)
-        {
-            if (
-                !string.IsNullOrEmpty(car.Model) &&
-                !string.IsNullOrEmpty(car.Color) &&
-                car.maxSpeed > 0 &&
-                car.Power > 0 &&
-
-                !string.IsNullOrEmpty(car.engine.EngineType) &&
-                car.engine.SerialNumber > 0 &&
-                car.engine.Volume > 0 &&
-                car.engine.Power > 0 &&
-
-                car.chassis.WheelsNumber > 0 &&
-                car.chassis.Load > 0 &&
-                car.chassis.SerialNumber > 0 &&
-
-                !string.IsNullOrEmpty(car.transmission.Manufacturer) &&
-                car.transmission.GearsNumber > 0 &&
-                !string.IsNullOrEmpty(car.transmission.Type)
-                )
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            passengerCar.PropertiesOutput();
+            truck.PropertiesOutput();
+            bus.PropertiesOutput();
+            scooter.PropertiesOutput();
         }
     }
 }
